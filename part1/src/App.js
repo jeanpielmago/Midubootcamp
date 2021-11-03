@@ -1,6 +1,23 @@
 import './App.css';
+import React, { useState } from 'react'
 
 function App() {
+  
+  const [ counter, setCounter ] = useState(0)
+
+  /*setTimeout(
+    () => setCounter(counter + 1),
+    1000
+  )*/
+  
+
+  
+
+
+
+  console.log('rendering...', counter)
+
+
   const course = {
     name: 'Half Stack application development',
     parts: [
@@ -49,7 +66,15 @@ function App() {
   }
 
   return (
+   
     <div>
+       <div>{counter}</div>
+       <button onClick={() => setCounter(counter+1)}>
+        clicks
+       </button>
+       <button onClick={() => setCounter(0)}>
+        roll back
+       </button>
       <Header title={course.name}/>
       <Content/>
       <Total/>
